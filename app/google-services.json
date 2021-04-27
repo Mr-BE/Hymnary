@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "356477082517",
+    "project_id": "the-hymnary",
+    "storage_bucket": "the-hymnary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356477082517:android:63ede55a495d2763cdf49c",
+        "android_client_info": {
+          "package_name": "dev.mrbe.hymnary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356477082517-p4fs2difuqa4tjv6m1b40tena52dqdpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt8EpPhtQLWe9w1N-8zmYbMBq0Vky465c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356477082517-p4fs2difuqa4tjv6m1b40tena52dqdpf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
