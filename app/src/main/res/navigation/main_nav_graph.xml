@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="dev.mrbe.hymnary.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="dev.mrbe.hymnary.ContentFragment"
+        android:label="fragment_content"
+        tools:layout="@layout/fragment_content">
+        <argument
+            android:name="arg_hymn"
+            app:argType="dev.mrbe.hymnary.Hymn" />
+    </fragment>
 </navigation>

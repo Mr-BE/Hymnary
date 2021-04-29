@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.FieldPath
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import dev.mrbe.hymnary.databinding.FragmentHomeBinding
@@ -20,7 +23,10 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        query = FirebaseFirestore.getInstance().collection("rch")
+        val timestamp = FieldValue.serverTimestamp()
+
+        query = FirebaseFirestore.getInstance().collection("hymns").document("rch")
+            .collection("rchHymns")
 
 
     }
@@ -36,7 +42,13 @@ class HomeFragment : Fragment() {
             .setQuery(query, Hymn::class.java)
             .build()
 
-        adapter = HymnAdapter(options)
+        adapter = HymnAdapter(options, HymnClickListener { hymn ->
+            findNavController()
+                .navigate(
+                    HomeFragmentDirections
+                        .actionHomeFragmentToContentFragment(hymn)
+                )
+        })
         binding.parentRecycler.adapter = adapter
 
         return binding.root
