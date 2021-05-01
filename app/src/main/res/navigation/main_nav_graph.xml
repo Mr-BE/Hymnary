@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/contentFragment"
-        android:name="dev.mrbe.hymnary.ContentFragment"
+        android:name="dev.mrbe.hymnary.content.ContentFragment"
         android:label="fragment_content"
         tools:layout="@layout/fragment_content">
         <argument

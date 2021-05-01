@@ -1,6 +1,7 @@
 package dev.mrbe.hymnary
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import dev.mrbe.hymnary.databinding.FragmentHomeBinding
+import timber.log.Timber
 
 
 class HomeFragment : Fragment() {
@@ -48,6 +50,8 @@ class HomeFragment : Fragment() {
                     HomeFragmentDirections
                         .actionHomeFragmentToContentFragment(hymn)
                 )
+            Timber.d("Passed Hymn is ${hymn.title}")
+            Log.d("HomeFrag", "Passed Hymn 2 is ${hymn.title}")
         })
         binding.parentRecycler.adapter = adapter
 

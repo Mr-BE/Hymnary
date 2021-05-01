@@ -52,6 +52,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
     //firebase
     implementation 'com.google.firebase:firebase-firestore:22.1.2'
     implementation "com.firebaseui:firebase-ui-firestore:6.2.1"
