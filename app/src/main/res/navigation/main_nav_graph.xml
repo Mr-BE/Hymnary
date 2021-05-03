@@ -23,4 +23,9 @@
             android:name="arg_hymn"
             app:argType="dev.mrbe.hymnary.Hymn" />
     </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="dev.mrbe.hymnary.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>
