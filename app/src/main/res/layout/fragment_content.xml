@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- COMPLETED: Add data binding node for Voter Info ViewModel -->
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_margin="@dimen/small_space"
             tools:context=".content.ContentFragment">
 
             <!--       Hymn Name-->
@@ -29,8 +31,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_space"
                 android:layout_marginBottom="@dimen/small_space"
+                android:fontFamily="@font/roboto"
                 android:gravity="center_horizontal"
                 android:text="@{viewModel.receivedHymn.title}"
+                android:textSize="@dimen/title_text_size"
                 android:textStyle="bold"
                 tools:text="Holy, holy, holy" />
 
@@ -38,8 +42,9 @@
                 android:id="@+id/content_hymn_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_space"
+                android:layout_marginBottom="@dimen/small_space"
                 android:gravity="center_horizontal"
+                android:textSize="@dimen/hymn_number_text_size"
                 android:text="@{viewModel.receivedHymn.hymnNumber}"
                 tools:text="RCH 1" />
 
@@ -47,7 +52,7 @@
                 android:id="@+id/content_hymn_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.receivedHymn.content}" />
+                app:hymnContent="@{viewModel.receivedHymn.content}" />
 
         </LinearLayout>
     </ScrollView>

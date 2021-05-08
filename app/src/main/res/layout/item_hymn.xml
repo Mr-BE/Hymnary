@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,24 +10,38 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/tiny_space"
+        android:background="@color/cardview_shadow_end_color"
+        android:elevation="@dimen/small_space"
+        app:cardCornerRadius="@dimen/tiny_space">
 
-        <TextView
-            android:id="@+id/item_hymn_title"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/small_space"
-            android:text="@{hymn.title}" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/item_hymn_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_space"
-            android:text="@{hymn.hymnNumber}" />
+            <TextView
+                android:id="@+id/item_hymn_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_space"
+                android:fontFamily="@font/roboto"
+                android:text="@{hymn.title}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/hymn_list_name_text" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/item_hymn_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_space"
+                android:fontFamily="@font/roboto"
+                android:text="@{hymn.hymnNumber}"
+                android:textSize="@dimen/hymn_list_number_text" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
