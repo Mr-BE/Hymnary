@@ -3,4 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="favorites">Favorites</string>
+    <string name="my_hymns">My Hymns</string>
+    <string name="personal">Personal</string>
+    <string name="rch">RCH</string>
+    <string name="revised_church_hymnary">Revised Church Hymnary</string>
+    <string name="hymm_books">Hymm Books</string>
+    <string name="sss">SS&amp;S</string>
+    <string name="phb">PHB</string>
+    <string name="sss_title_string">Sacred Songs and Solos</string>
+    <string name="phb_title_string">Presbyterian Hymn Book</string>
 </resources>

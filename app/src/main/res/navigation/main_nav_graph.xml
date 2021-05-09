@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/rchFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="dev.mrbe.hymnary.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/rchFragment"
+        android:name="dev.mrbe.hymnary.RchFragment"
+        android:label="@string/revised_church_hymnary"
+        tools:layout="@layout/fragment_rch">
         <action
             android:id="@+id/action_homeFragment_to_contentFragment"
             app:destination="@id/contentFragment" />
@@ -28,4 +28,19 @@
         android:name="dev.mrbe.hymnary.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/myHymnsFragment"
+        android:name="dev.mrbe.hymnary.MyHymnsFragment"
+        android:label="fragment_my_hymns"
+        tools:layout="@layout/fragment_my_hymns" />
+    <fragment
+        android:id="@+id/sssFragment"
+        android:name="dev.mrbe.hymnary.SssFragment"
+        android:label="@string/sss_title_string"
+        tools:layout="@layout/fragment_sss" />
+    <fragment
+        android:id="@+id/phbFragment"
+        android:name="dev.mrbe.hymnary.PhbFragment"
+        android:label="@string/phb_title_string"
+        tools:layout="@layout/fragment_phb" />
 </navigation>

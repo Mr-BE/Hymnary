@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/favoritesFragment"
-        android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favorites" />
+    <item android:title="@string/hymm_books">
+        <menu>
+            <group android:id="@+id/hymnbooks_group">
+
+                <item
+                    android:id="@+id/rchFragment"
+                    android:title="@string/rch" />
+                <item
+                    android:id="@+id/sssFragment"
+                    android:title="@string/sss" />
+                <item
+                    android:id="@+id/phbFragment"
+                    android:title="@string/phb" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/personal">
+        <menu>
+
+            <group android:id="@+id/personal_group">
+                <item
+                    android:id="@+id/myHymnsFragment"
+                    android:icon="@drawable/ic_baseline_menu_book_24"
+                    android:title="@string/my_hymns" />
+                <item
+                    android:id="@+id/favoritesFragment"
+                    android:icon="@drawable/ic_baseline_favorite_24"
+                    android:title="@string/favorites" />
+            </group>
+        </menu>
+    </item>
+
 </menu>

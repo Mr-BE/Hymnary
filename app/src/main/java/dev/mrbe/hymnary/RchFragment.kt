@@ -10,13 +10,14 @@ import androidx.navigation.fragment.findNavController
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import dev.mrbe.hymnary.databinding.FragmentHomeBinding
+import dev.mrbe.hymnary.databinding.FragmentRchBinding
+
 import timber.log.Timber
 
 
-class HomeFragment : Fragment() {
+class RchFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentRchBinding
     private lateinit var query: Query
     private lateinit var adapter: HymnAdapter
 
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentRchBinding.inflate(inflater, container, false)
 
         val options: FirestoreRecyclerOptions<Hymn> = FirestoreRecyclerOptions.Builder<Hymn>()
             .setQuery(query, Hymn::class.java)
@@ -42,10 +43,10 @@ class HomeFragment : Fragment() {
 
         adapter = HymnAdapter(options, HymnClickListener { hymn ->
             findNavController()
-                    .navigate(
-                            HomeFragmentDirections
-                                    .actionHomeFragmentToContentFragment(hymn)
-                    )
+                .navigate(
+                    RchFragmentDirections
+                        .actionHomeFragmentToContentFragment(hymn)
+                )
             Timber.d("Passed Hymn is ${hymn.title}")
             Log.d("HomeFrag", "Passed Hymn 2 is ${hymn.title}")
         })
@@ -69,15 +70,15 @@ class HomeFragment : Fragment() {
         }
         val output = newText
         println(output)
-        Log.i("HomeFragment", "Value is: $output")
+        Log.i("RchFragment", "Value is: $output")
 
 
         val filter = string.filter { it.isDigit() }
-        Log.i("HomeFragment", "Number vaue is: $filter")
+        Log.i("RchFragment", "Number vaue is: $filter")
         if (string.contains(numbers.lastIndex.toString())) {
             string.replace(j, "\n $j")
 
-            Log.i("HomeFragment", "String vaue is: $string")
+            Log.i("RchFragment", "String vaue is: $string")
         }
 
 
@@ -96,7 +97,7 @@ class HomeFragment : Fragment() {
 //                text = inputStr.replace(i.toString(), "\n $i" )
 //            }
 //        }
-        Log.i("HomeFragment", "String value is: $text")
+        Log.i("RchFragment", "String value is: $text")
         return modifyText(text)
     }
 
