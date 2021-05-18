@@ -32,7 +32,11 @@
         android:id="@+id/myHymnsFragment"
         android:name="dev.mrbe.hymnary.MyHymnsFragment"
         android:label="fragment_my_hymns"
-        tools:layout="@layout/fragment_my_hymns" />
+        tools:layout="@layout/fragment_my_hymns">
+        <action
+            android:id="@+id/action_myHymnsFragment_to_hymnsFormFragment"
+            app:destination="@id/hymnsFormFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sssFragment"
         android:name="dev.mrbe.hymnary.SssFragment"
@@ -43,4 +47,9 @@
         android:name="dev.mrbe.hymnary.PhbFragment"
         android:label="@string/phb_title_string"
         tools:layout="@layout/fragment_phb" />
+    <fragment
+        android:id="@+id/hymnsFormFragment"
+        android:name="dev.mrbe.hymnary.HymnsFormFragment"
+        android:label="hymns_form_fragment"
+        tools:layout="@layout/hymns_form_fragment" />
 </navigation>

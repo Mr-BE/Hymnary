@@ -57,50 +57,6 @@ class RchFragment : Fragment() {
         return binding.root
     }
 
-    private fun test(string: String) {
-        val numbers = listOf(1..10)
-        var newText: String = ""
-        val range = listOf('1', '2', '3', '4', '5', '6', '7', '8')
-        val j = numbers.joinToString()
-        for (i in range) {
-            if (string.contains(i)) {
-                newText = string.replace(i.toString(), "\n $i")
-                test(newText)
-            }
-        }
-        val output = newText
-        println(output)
-        Log.i("RchFragment", "Value is: $output")
-
-
-        val filter = string.filter { it.isDigit() }
-        Log.i("RchFragment", "Number vaue is: $filter")
-        if (string.contains(numbers.lastIndex.toString())) {
-            string.replace(j, "\n $j")
-
-            Log.i("RchFragment", "String vaue is: $string")
-        }
-
-
-    }
-
-    tailrec fun modifyText(inputStr: String): String {
-        val range = listOf('1', '2', '3', '4', '5', '6', '7')
-        var text = ""
-        range.forEach {
-            if (inputStr.contains(it)) {
-                text = inputStr.replace(it.toString(), "\n $it")
-            }
-        }
-//        for (i in range) {
-//            if (inputStr.contains(i)) {
-//                text = inputStr.replace(i.toString(), "\n $i" )
-//            }
-//        }
-        Log.i("RchFragment", "String value is: $text")
-        return modifyText(text)
-    }
-
     override fun onStart() {
         super.onStart()
         adapter.startListening()
