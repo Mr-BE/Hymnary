@@ -57,9 +57,12 @@ dependencies {
 
     //Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
+
     //firebase
     implementation 'com.google.firebase:firebase-firestore:22.1.2'
     implementation "com.firebaseui:firebase-ui-firestore:6.2.1"
+    implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
+
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

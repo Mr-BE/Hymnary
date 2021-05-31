@@ -2,6 +2,7 @@ package dev.mrbe.hymnary
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -9,9 +10,14 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import dev.mrbe.hymnary.databinding.ActivityMainBinding
 import androidx.navigation.ui.AppBarConfiguration
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
+    private val cacheHelper: CacheHelper by inject()
+
+
     private lateinit var drawerLayout: DrawerLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

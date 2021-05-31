@@ -13,4 +13,5 @@
     <string name="sss_title_string">Sacred Songs and Solos</string>
     <string name="phb_title_string">Presbyterian Hymn Book</string>
     <string name="add_hymn">Add Hymn</string>
+    <string name="first_bubble_description">Some random description</string>
 </resources>

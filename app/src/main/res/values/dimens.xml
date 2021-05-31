@@ -8,4 +8,10 @@
     <dimen name="tiny_space">4dp</dimen>
     <dimen name="hymn_list_name_text">16sp</dimen>
     <dimen name="hymn_list_number_text">14sp</dimen>
+
+    <dimen name="onboarding_bubble_item_size">380dp</dimen>
+    <dimen name="onboarding_bubble_item_size_xlarge">380dp</dimen>
+    <dimen name="onboarding_bubble_item_size_large">100dp</dimen>
+    <dimen name="onboarding_bubble_item_size_medium">90dp</dimen>
+    <dimen name="onboarding_bubble_item_size_small">60dp</dimen>
 </resources>
