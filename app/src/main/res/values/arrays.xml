@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="graph_type">
+        <item>@id/onboarding_nav_graph</item>
+        <item>@id/main_nav_graph</item>
+    </array>
+</resources>

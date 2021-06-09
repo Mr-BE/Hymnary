@@ -13,5 +13,29 @@
     <string name="sss_title_string">Sacred Songs and Solos</string>
     <string name="phb_title_string">Presbyterian Hymn Book</string>
     <string name="add_hymn">Add Hymn</string>
-    <string name="first_bubble_description">Some random description</string>
+    <string name="key">key</string>
+    <string name="title_activity_start">StartActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="button_text_previous">Previous</string>
+
+    <string name="button_text_complete">complete</string>
+    <string name="button_text_next">next</string>
+
+
+    <string name="first_bubble_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor purus\n</string>
+    <string name="first_bubble_title">Lorem ipsum</string>
+
+    <string name="second_bubble_title">Ut at urna </string>
+    <string name="second_bubble_description">Ut at urna non nibh viverra consequat. In a nibh a elit feugiat sagittis.\n</string>
+
+    <string name="third_bubble_title">Aliquam vel dolor</string>
+    <string name="third_bubble_description">- aliquam vel dolor justo. Quisque posuere mollis turpis, eget scelerisque risus maximus vitae.</string>
+    <string name="onboaring_with_motionlayout">Onboaring with MotionLayout</string>
 </resources>

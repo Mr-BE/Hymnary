@@ -13,6 +13,7 @@ android {
 
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     defaultConfig {
         applicationId "dev.mrbe.hymnary"
@@ -62,6 +63,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:22.1.2'
     implementation "com.firebaseui:firebase-ui-firestore:6.2.1"
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
+
+    //pref
+    implementation 'androidx.preference:preference-ktx:1.1.1'
 
 
     // Navigation
