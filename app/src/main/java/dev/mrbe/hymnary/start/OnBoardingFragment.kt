@@ -1,7 +1,10 @@
-package dev.mrbe.hymnary
+package dev.mrbe.hymnary.start
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
@@ -11,21 +14,29 @@ import android.widget.Button
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatDialog
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
+import dev.mrbe.hymnary.MainActivity
+import dev.mrbe.hymnary.R
 import dev.mrbe.hymnary.databinding.FragmentOnBoardingBinding
 
 class onBoardingFragment : DialogFragment() {
     private lateinit var binding: FragmentOnBoardingBinding
     private val indicators = mutableListOf<View>()
     private var currentPosition = 0
-
+    val PREF_NAME: String = "myPrefs"
+    val PREF_KEY: String = "hasSeenOnboard"
 //    private var previous = binding.buttonPrevious
 //    private var next = binding.buttonNext
 //    private var navContainer = binding.navContainer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (restorePrefData()) {
+            startActivity(Intent(context, MainActivity::class.java))
+        }
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +58,11 @@ class onBoardingFragment : DialogFragment() {
         attachPreviousButtonListener()
     }
 
+    override fun onStop() {
+        super.onStop()
+        savePrefData()
+    }
+
     //when user clicks next
     private fun attachNextButtonListener() {
 
@@ -54,7 +70,7 @@ class onBoardingFragment : DialogFragment() {
             when (currentPosition) {
                 0 -> binding.buttonNext.navigate(R.id.first_scene, R.id.second_scene)
                 1 -> binding.buttonNext.navigate(R.id.second_scene, R.id.third_scene)
-                else -> dismiss()
+                else -> findNavController().navigate(R.id.action_onBoardingFragment2_to_main_nav_graph)
             }
         }
     }
@@ -63,7 +79,11 @@ class onBoardingFragment : DialogFragment() {
         binding.buttonPrevious.setOnClickListener {
             when (currentPosition) {
                 2 -> binding.buttonPrevious.navigate(R.id.third_scene, R.id.second_scene)
-                else -> binding.buttonPrevious.navigate(R.id.second_scene, R.id.first_scene)
+                else -> {
+                    savePrefData()
+                    binding.buttonPrevious.navigate(R.id.second_scene, R.id.first_scene)
+
+                }
             }
         }
     }
@@ -138,5 +158,20 @@ class onBoardingFragment : DialogFragment() {
             else -> binding.buttonPrevious.visibility = View.INVISIBLE
         }
     }
+
+    private fun savePrefData() {
+        val pref: SharedPreferences? = context?.getSharedPreferences(PREF_NAME, MODE_PRIVATE)
+        val editor: SharedPreferences.Editor? = pref?.edit()
+        editor?.putBoolean(PREF_KEY, true)
+        editor?.apply()
+    }
+
+    private fun restorePrefData(): Boolean {
+        val pref: SharedPreferences? = context?.getSharedPreferences(PREF_NAME, MODE_PRIVATE)
+        return pref?.getBoolean(PREF_KEY, false)!!
+
+    }
+
+
 }
 

@@ -27,6 +27,11 @@
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment2"
-        android:name="dev.mrbe.hymnary.onBoardingFragment"
-        android:label="onBoardingFragment" />
+        android:name="dev.mrbe.hymnary.start.onBoardingFragment"
+        android:label="onBoardingFragment">
+        <action
+            android:id="@+id/action_onBoardingFragment2_to_main_nav_graph"
+            app:destination="@id/main_nav_graph" />
+    </fragment>
+    <include app:graph="@navigation/main_nav_graph" />
 </navigation>

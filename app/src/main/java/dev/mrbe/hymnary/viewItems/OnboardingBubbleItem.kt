@@ -2,7 +2,6 @@ package dev.mrbe.hymnary.viewItems
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
@@ -15,11 +14,8 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.marginRight
-import androidx.databinding.DataBindingUtil
 import dev.mrbe.hymnary.R
 import dev.mrbe.hymnary.databinding.LayoutBubbleItemBinding
-import org.koin.core.KoinApplication.Companion.init
 
 
 class OnboardingBubbleItem @kotlin.jvm.JvmOverloads constructor(
@@ -42,7 +38,7 @@ class OnboardingBubbleItem @kotlin.jvm.JvmOverloads constructor(
 
 //        View.inflate(context, R.layout.layout_bubble_item, this)
 
-        //create TypeArray with specific TextView styling
+        //create TypeArray with specific TextView styling (Title text)
         val typeArray = context.obtainStyledAttributes(attrs, R.styleable.OnboardingBubbleItem)
         try {
             val textColor =
@@ -62,16 +58,22 @@ class OnboardingBubbleItem @kotlin.jvm.JvmOverloads constructor(
                     R.styleable.OnboardingBubbleItem_bl_margin_bottom,
                     16
                 )
-            val text = typeArray.getString(R.styleable.OnboardingBubbleItem_bl_text)
+            val titleText = typeArray.getString(R.styleable.OnboardingBubbleItem_bl_text)
 
             //set margins
 //            val bubbleItemTitle =findViewById<TextView>(R.id.bubbleItemTitle)
             (binding.bubbleItemTitle.layoutParams as ConstraintLayout.LayoutParams)
                 .setMargins(marginStart, marginTop, marginEnd, marginBottom)
 
-            binding.bubbleItemTitle.text = text
+            binding.bubbleItemTitle.text = titleText
             binding.bubbleItemTitle.setTextColor(textColor)
             binding.bubbleItemTitle.setTextGravity(gravity)
+
+            //Description text
+            val descrText = typeArray.getString(R.styleable.OnboardingBubbleItem_bl_description)
+            binding.bubbleItemDescription.text = descrText
+            binding.bubbleItemDescription.setTextColor(textColor)
+            binding.bubbleItemDescription.setTextGravity(gravity)
         } finally {
             typeArray.recycle()
         }

@@ -11,7 +11,7 @@
         android:id="@+id/onboard_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".onBoardingFragment">
+        tools:context=".start.onBoardingFragment">
 
         <include
             android:id="@+id/included_layout"
