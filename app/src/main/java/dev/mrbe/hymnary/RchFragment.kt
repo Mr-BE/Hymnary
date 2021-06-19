@@ -1,17 +1,19 @@
 package dev.mrbe.hymnary
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import dev.mrbe.hymnary.databinding.FragmentRchBinding
-
 import timber.log.Timber
 
 
@@ -53,6 +55,17 @@ class RchFragment : Fragment() {
         binding.parentRecycler.adapter = adapter
 
 //        modifyText("1.tHoly, holy, holy, 2.God Almighty!")
+
+        //Navigate to user profile
+        val navView: NavigationView? = activity?.findViewById(R.id.navView)
+        val header: View = navView?.getHeaderView(0)!!
+        header.setOnClickListener {
+//            findNavController().navigate(R.id.action_rchFragment_to_userProfileFragment)
+            startActivity(Intent(context, UserActivity::class.java))
+
+            Toast.makeText(context, "OnClick", Toast.LENGTH_SHORT).show()
+        }
+
 
         return binding.root
     }

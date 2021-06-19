@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, controller, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, controller)
+
+
     }
 
     //Control up button and hamburger icon
