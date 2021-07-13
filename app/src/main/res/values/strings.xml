@@ -38,4 +38,7 @@
     <string name="third_bubble_title">Aliquam vel dolor</string>
     <string name="third_bubble_description">- aliquam vel dolor justo. Quisque posuere mollis turpis, eget scelerisque risus maximus vitae.</string>
     <string name="onboaring_with_motionlayout">Onboaring with MotionLayout</string>
+    <string name="recent">Recent</string>
+
+    <string name="friends">Friends</string>
 </resources>

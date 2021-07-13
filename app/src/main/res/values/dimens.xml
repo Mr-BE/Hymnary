@@ -16,4 +16,5 @@
     <dimen name="onboarding_bubble_item_size_small">60dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="extra_large_space">64dp</dimen>
+    <dimen name="large_space">32dp</dimen>
 </resources>
