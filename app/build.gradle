@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id  'androidx.navigation.safeargs.kotlin'
+
 }
 
 android {
@@ -64,6 +65,14 @@ dependencies {
     implementation "com.firebaseui:firebase-ui-firestore:6.2.1"
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+
+    // Declare the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+
     //pref
     implementation 'androidx.preference:preference-ktx:1.1.1'
 
@@ -89,9 +98,14 @@ dependencies {
 // Koin for Jetpack WorkManager
     implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
 
-    //Gson
-    implementation "com.google.code.gson:gson:$gson_version"
 
     //circular background
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
+
+    // CameraX core library using camera2 implementation
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+// CameraX Lifecycle Library
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+// CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha27"
 }
