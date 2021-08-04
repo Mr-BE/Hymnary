@@ -2,7 +2,6 @@ package dev.mrbe.hymnary
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +13,10 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import dev.mrbe.hymnary.databinding.FragmentRchBinding
-import timber.log.Timber
 
 
 class RchFragment : Fragment() {
+
 
     private lateinit var binding: FragmentRchBinding
     private lateinit var query: Query
@@ -26,6 +25,8 @@ class RchFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+//        query = FirebaseFirestore.getInstance().collection("hymns").document("rch")
+//            .collection("rchHymns")
         query = FirebaseFirestore.getInstance().collection("hymns").document("rch")
             .collection("rchHymns")
 
@@ -43,14 +44,14 @@ class RchFragment : Fragment() {
             .setQuery(query, Hymn::class.java)
             .build()
 
+
+
         adapter = HymnAdapter(options, HymnClickListener { hymn ->
             findNavController()
                 .navigate(
                     RchFragmentDirections
                         .actionHomeFragmentToContentFragment(hymn)
                 )
-            Timber.d("Passed Hymn is ${hymn.title}")
-            Log.d("HomeFrag", "Passed Hymn 2 is ${hymn.title}")
         })
         binding.parentRecycler.adapter = adapter
 

@@ -41,4 +41,9 @@
     <string name="recent">Recent</string>
 
     <string name="friends">Friends</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+    <string name="media">Media</string>
+    <string name="camera">Camera</string>
+    <string name="choose_media_location">Choose Media Location</string>
 </resources>

@@ -10,5 +10,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Hymnary.AppBarOverlay" />
 
-    <include layout="@layout/content_user_profile" />
+    <include
+        android:id="@+id/content_user_layout"
+        layout="@layout/content_user_profile" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
