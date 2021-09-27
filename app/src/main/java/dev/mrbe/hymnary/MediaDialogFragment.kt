@@ -94,7 +94,9 @@ class MediaDialogFragment : DialogFragment() {
         if (imageUri == null) {
             Timber.d("Null image URI received")
         } else {
-            viewModel.getBitmapFromUri(imageUri!!, contentResolver)?.let { viewModel.setImage(it) }
+//            viewModel.setImageUri(imageUri)
+            viewModel.firebaseUploadAndDownloadTask(imageUri!!, requireContext(), contentResolver)
+//            viewModel.getBitmapFromUri(imageUri!!, contentResolver)?.let { viewModel.setImage(it) }
             dismiss()
 
         }

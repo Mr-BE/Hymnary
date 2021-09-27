@@ -41,7 +41,6 @@ class HymnViewHolder private constructor(private val binding: ItemHymnBinding) :
             return HymnViewHolder(binding)
         }
     }
-
 }
 
 //Click listener class for hymn items

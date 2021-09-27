@@ -22,6 +22,8 @@ class RchFragment : Fragment() {
     private lateinit var query: Query
     private lateinit var adapter: HymnAdapter
 
+//    val db = requireActivity().Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -58,10 +60,10 @@ class RchFragment : Fragment() {
 //        modifyText("1.tHoly, holy, holy, 2.God Almighty!")
 
         //Navigate to user profile
-        val navView: NavigationView? = activity?.findViewById(R.id.navView)
-        val header: View = navView?.getHeaderView(0)!!
-        header.setOnClickListener {
-//            findNavController().navigate(R.id.action_rchFragment_to_userProfileFragment)
+        val navView: NavigationView? = requireActivity().findViewById(R.id.navView)
+        val header: View? = navView?.getHeaderView(0)
+        header?.setOnClickListener {
+            //            findNavController().navigate(R.id.action_rchFragment_to_userProfileFragment)
             startActivity(Intent(context, UserActivity::class.java))
 
             Toast.makeText(context, "OnClick", Toast.LENGTH_SHORT).show()
