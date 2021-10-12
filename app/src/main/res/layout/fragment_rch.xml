@@ -11,13 +11,10 @@
         tools:context=".RchFragment">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/parent_recycler"
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/compose_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/small_space"
-            android:layout_marginEnd="@dimen/small_space"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

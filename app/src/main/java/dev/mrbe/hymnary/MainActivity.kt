@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import dev.mrbe.hymnary.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, controller, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, controller)
+
+
     }
 
     //Control up button and hamburger icon

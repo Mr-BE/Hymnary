@@ -38,4 +38,17 @@
     <string name="third_bubble_title">Aliquam vel dolor</string>
     <string name="third_bubble_description">- aliquam vel dolor justo. Quisque posuere mollis turpis, eget scelerisque risus maximus vitae.</string>
     <string name="onboaring_with_motionlayout">Onboaring with MotionLayout</string>
+    <string name="recent">Recent</string>
+
+    <string name="friends">Friends</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+    <string name="media">Media</string>
+    <string name="camera">Camera</string>
+    <string name="choose_media_location">Choose Media Location</string>
+    <string name="sign_in">Sign in</string>
+    <string name="user_pref_name">userPref</string>
+    <string name="saved_default_dp_link"><![CDATA["https://firebasestorage.googleapis.com/v0/b/the-hymnary.appspot.com/o/userDisplayPictures%2FYGZ7vihZbOPnlL5n4s7Eb8W13ey1%2Fdp?alt=media&token=2f767c03-25e2-429c-9675-203b738a8e3b "]]></string>
+    <string name="user_pref_key">User Pref State Key</string>
+    <string name="user_pref_string_key">userDpLink</string>
 </resources>
