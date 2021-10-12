@@ -10,9 +10,9 @@
         android:name="dev.mrbe.hymnary.RchFragment"
         android:label="@string/revised_church_hymnary"
         tools:layout="@layout/fragment_rch">
-        <action
-            android:id="@+id/action_homeFragment_to_contentFragment"
-            app:destination="@id/contentFragment" />
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_contentFragment"-->
+        <!--            app:destination="@id/contentFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/contentFragment"

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- COMPLETED: Add data binding node for Voter Info ViewModel -->
     <data>
 
         <variable
@@ -23,6 +22,12 @@
             android:orientation="vertical"
             android:layout_margin="@dimen/small_space"
             tools:context=".content.ContentFragment">
+
+            <!--            <androidx.compose.ui.platform.ComposeView-->
+            <!--                android:id="@+id/details_compose_view"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                />-->
 
             <!--       Hymn Name-->
             <TextView

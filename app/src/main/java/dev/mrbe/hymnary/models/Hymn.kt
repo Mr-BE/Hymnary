@@ -10,3 +10,9 @@ data class Hymn(
     val content: String = "",
     val hymnType: String = ""
 ) : Parcelable
+
+@Parcelize
+data class Book(
+    val title: String = "",
+    val author: String = "",
+) : Parcelable

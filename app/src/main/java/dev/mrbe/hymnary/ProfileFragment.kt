@@ -20,10 +20,6 @@ import dev.mrbe.hymnary.databinding.UserProfileBinding
 import timber.log.Timber
 
 class ProfileFragment : Fragment() {
-    //shared pref
-    val userDpPref = activity?.getPreferences(Context.MODE_PRIVATE)
-    val userDpPrefState = activity?.getPreferences(Context.MODE_PRIVATE)
-
     //firebase bucket var
     private val storage: FirebaseStorage = Firebase.storage
 
@@ -54,31 +50,15 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = UserProfileBinding.inflate(inflater, container, false)
 
-
-
-
-        if (savedInstanceState != null) {
-
-            var retrievedUri: Uri = Uri.parse(savedInstanceState.getString(STATE_URI))
-//            retrievedUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/the-hymnary.appspot.com/o/userDisplayPictures%2FYGZ7vihZbOPnlL5n4s7Eb8W13ey1%2Fdp?alt=media&token=2f767c03-25e2-429c-9675-203b738a8e3b\n")
-//            Timber.d("Retrieved state is $retrievedUri ")
-//            downloadDp(retrievedUri)
-        }
-//        var retrievedUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/the-hymnary.appspot.com/o/userDisplayPictures%2FYGZ7vihZbOPnlL5n4s7Eb8W13ey1%2Fdp?alt=media&token=2f767c03-25e2-429c-9675-203b738a8e3b\n")
-//        Timber.d("Retrieved state is $retrievedUri ")
-//        downloadDp(retrievedUri)
-//
-
         //set up media selector button
         binding.profieSelectMediaButton.setOnClickListener {
-//            downloadDp()
+
             MediaDialogFragment().show(
                 childFragmentManager, TAG
             )
         }
-        val t = Integer.valueOf(binding.textDemo.text.toString())
 
-        return binding.root
+      return binding.root
     }
 
     override fun onResume() {
@@ -91,7 +71,6 @@ class ProfileFragment : Fragment() {
             Timber.d("Tag: User pref data is ${restorePrefData()}")
         }
         viewModel.downloadUrl.observe(viewLifecycleOwner, { downloadUri ->
-            mUri = downloadUri
             downloadDp(downloadUri)
             binding.textDemo.text = downloadUri.toString()
 
@@ -100,6 +79,7 @@ class ProfileFragment : Fragment() {
         })
     }
 
+    // Get image with Glide
     private fun downloadDp(uri: Uri?) {
         val imageView = binding.circularImageView
         Glide.with(this)
@@ -109,13 +89,7 @@ class ProfileFragment : Fragment() {
             .into(imageView)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString(STATE_URI, mUri.toString())
-        Timber.d("Instance Saved: value -> $mUri")
-        super.onSaveInstanceState(outState)
-    }
-
-    //Pref files
+    /*Pref files*/
     private fun savePrefData(userPrefDpLink: String) {
         //shared pref
         val userDpPref =
